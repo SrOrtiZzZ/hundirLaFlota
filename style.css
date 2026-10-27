@@ -1,0 +1,309 @@
+
+/* ==========================
+   1. CONFIGURACIÓN GENERAL
+   ========================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #eaf4ff;
+    background: #091827;
+}
+
+/* Distribución principal */
+.main-layout {
+    display: grid;
+    grid-template-columns: 270px minmax(0, 1fr);
+    gap: 24px;
+    min-height: 100vh;
+    padding: 24px;
+}
+
+/* ==========================
+   2. PANEL LATERAL
+   ========================== */
+
+.info-panel {
+    padding: 24px 18px;
+    background: #122b40;
+    border: 1px solid #29465d;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.info-panel h2 {
+    margin: 0 0 18px;
+    color: #f0f8ff;
+    font-size: 19px;
+}
+
+/* Lista de barcos */
+#fleet-status {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#fleet-status li {
+    padding: 13px 12px;
+    background: #1b3a52;
+    border: 1px solid #31546d;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #dcecf8;
+}
+
+/* ==========================
+   3. CONTADOR DE DISPAROS
+   ========================== */
+
+.stats {
+    margin-top: 24px;
+    padding: 16px;
+    background: #0c2032;
+    border: 1px solid #29465d;
+    border-radius: 10px;
+}
+
+.stats p {
+    margin: 0;
+    color: #a9c3d7;
+    font-size: 14px;
+}
+
+#shot-counter {
+    display: block;
+    margin-top: 8px;
+    color: #67e8f9;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* ==========================
+   4. CLASIFICACIÓN
+   ========================== */
+
+.leaderboard {
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid #315068;
+}
+
+#score-list {
+    padding-left: 28px;
+    margin-bottom: 0;
+}
+
+#score-list li {
+    padding: 8px 4px;
+    color: #d5e5f2;
+    font-size: 14px;
+}
+
+/* ==========================
+   5. ZONA DEL JUEGO
+   ========================== */
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 0;
+    padding: 30px 20px;
+    background: #10263a;
+    border: 1px solid #29465d;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.game-container h1 {
+    margin: 0 0 12px;
+    color: #f0f8ff;
+    font-size: 32px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+/* Mensajes */
+#message-area {
+    margin-bottom: 24px;
+    padding: 12px 20px;
+    border: 1px solid #31546d;
+    border-radius: 8px;
+    background: #1b3a52;
+    color: #bdeaff;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* ==========================
+   6. TABLERO
+   ========================== */
+
+#game-board {
+    display: grid;
+    gap: 3px;
+    padding: 9px;
+    background: #071725;
+    border: 2px solid #31546d;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Cada casilla */
+.cell {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 1px solid #4786a8;
+    border-radius: 3px;
+    background: #246080;
+    cursor: pointer;
+    transition:
+        background-color 0.15s,
+        border-color 0.15s;
+}
+
+/* Efecto al pasar el ratón */
+.cell:hover {
+    background: #55a8d2;
+    border-color: #b9edff;
+}
+
+/* Disparo al agua */
+.cell.agua {
+    background: #dbeaf2;
+    border-color: #a5c3d3;
+    cursor: default;
+}
+
+/* Barco alcanzado */
+.cell.tocado {
+    background: #f5a623;
+    border-color: #ffcf72;
+    cursor: default;
+}
+
+/* Barco hundido */
+.cell.hundido {
+    background: #e34e59;
+    border-color: #ff9da4;
+    cursor: default;
+}
+/*barco hundido del todo */
+.ship-sunk {
+    color: #ff727a;
+    text-decoration: line-through;
+    opacity: 0.8;
+}
+
+/* ==========================
+   7. VENTANA DE VICTORIA
+   ========================== */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(3, 12, 22, 0.8);
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 420px;
+    padding: 30px;
+    background: #122b40;
+    border: 1px solid #3b617b;
+    border-radius: 14px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: #67e8f9;
+}
+
+.modal-content p {
+    color: #d5e5f2;
+    line-height: 1.5;
+}
+
+/* Campo para el nombre */
+#player-name {
+    width: 100%;
+    margin: 12px 0;
+    padding: 12px;
+    border: 1px solid #42637b;
+    border-radius: 7px;
+    background: #091827;
+    color: white;
+    font-size: 15px;
+}
+
+#player-name:focus {
+    outline: 2px solid #67e8f9;
+    outline-offset: 2px;
+}
+
+/* Botón de guardar */
+#save-score-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 7px;
+    background: #0891b2;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#save-score-btn:hover {
+    background: #0e7490;
+}
+
+/* ==========================
+   8. ADAPTACIÓN A MÓVILES
+   ========================== */
+
+@media (max-width: 850px) {
+    .main-layout {
+        grid-template-columns: 1fr;
+        padding: 12px;
+        gap: 16px;
+    }
+
+    .game-container {
+        padding: 24px 10px;
+        overflow-x: auto;
+    }
+
+    .info-panel {
+        order: 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .cell {
+        width: 29px;
+        height: 29px;
+    }
+
+    .game-container h1 {
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
+}
