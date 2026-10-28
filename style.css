@@ -135,11 +135,15 @@ body {
     text-align: center;
 }
 
-/* 6. TABLERO */
+/* 6. TABLERO (resposive) */
+
 
 #game-board {
     display: grid;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
     gap: 3px;
+    width: 100%;
+    max-width: 440px;
     padding: 9px;
     background: #071725;
     border: 2px solid #31546d;
@@ -147,18 +151,20 @@ body {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
+
+
+
 /* Cada casilla */
 .cell {
-    width: 40px;
-    height: 40px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
     padding: 0;
     border: 1px solid #4786a8;
     border-radius: 3px;
     background: #246080;
     cursor: pointer;
-    transition:
-        background-color 0.15s,
-        border-color 0.15s;
+    transition: background-color 0.15s, border-color 0.15s;
 }
 
 /* Efecto al pasar el ratón */
@@ -269,35 +275,39 @@ body {
 
 @media (max-width: 850px) {
     .main-layout {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         padding: 12px;
         gap: 16px;
     }
 
     .game-container {
         padding: 24px 10px;
-        overflow-x: auto;
+        min-width: 0;
     }
 
     .info-panel {
         order: 2;
     }
+
+    #message-area {
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 480px) {
-    .cell {
-        width: 29px;
-        height: 29px;
-    }
-
     .game-container h1 {
         font-size: 24px;
         letter-spacing: 1px;
     }
+
+    #play-again-btn {
+        max-width: 100%;
+    }
 }
 
 
 
+/*btn volver a jugar*/
 #play-again-btn {
     display: none;
     margin-bottom: 20px;
