@@ -70,7 +70,7 @@ foreach ($fleetDefinition as $shipInfo) {
             $placedShips[] = [
                 "name" => $shipInfo["name"],
                 "size" => $shipInfo["size"],
-                "coordinates" => $shipCoordinates
+                "positions" => $shipCoordinates
             ];
 
             // Terminamos el while
@@ -82,7 +82,7 @@ foreach ($fleetDefinition as $shipInfo) {
 // le enviamos el tamaño del tablero y los barcos con sus coordenadas, json encode lo transforma en json 
 $response = [
     "boardSize" => $boardSize,
-    "ships" => $placedShips
+    "fleet" => $placedShips
 ];
 
 echo json_encode($response);
