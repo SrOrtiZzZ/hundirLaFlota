@@ -1,7 +1,4 @@
-
-/* ==========================
-   1. CONFIGURACIÓN GENERAL
-   ========================== */
+/*  1. CONFIGURACIÓN GENERAL */
 
 * {
     box-sizing: border-box;
@@ -23,9 +20,7 @@ body {
     padding: 24px;
 }
 
-/* ==========================
-   2. PANEL LATERAL
-   ========================== */
+/* 2. PANEL LATERAL */
 
 .info-panel {
     padding: 24px 18px;
@@ -60,9 +55,7 @@ body {
     color: #dcecf8;
 }
 
-/* ==========================
-   3. CONTADOR DE DISPAROS
-   ========================== */
+/* 3. CONTADOR DE DISPAROS */
 
 .stats {
     margin-top: 24px;
@@ -86,9 +79,9 @@ body {
     font-weight: bold;
 }
 
-/* ==========================
+/* 
    4. CLASIFICACIÓN
-   ========================== */
+    */
 
 .leaderboard {
     margin-top: 28px;
@@ -107,9 +100,8 @@ body {
     font-size: 14px;
 }
 
-/* ==========================
-   5. ZONA DEL JUEGO
-   ========================== */
+/* 
+   5. ZONA DEL JUEGO  */
 
 .game-container {
     display: flex;
@@ -143,9 +135,7 @@ body {
     text-align: center;
 }
 
-/* ==========================
-   6. TABLERO
-   ========================== */
+/* 6. TABLERO */
 
 #game-board {
     display: grid;
@@ -204,9 +194,9 @@ body {
     opacity: 0.8;
 }
 
-/* ==========================
+/* 
    7. VENTANA DE VICTORIA
-   ========================== */
+    */
 
 .modal-overlay {
     position: fixed;
@@ -275,9 +265,7 @@ body {
     background: #0e7490;
 }
 
-/* ==========================
-   8. ADAPTACIÓN A MÓVILES
-   ========================== */
+/* 8. ADAPTACIÓN A MÓVILES */
 
 @media (max-width: 850px) {
     .main-layout {
@@ -307,3 +295,25 @@ body {
         letter-spacing: 1px;
     }
 }
+
+
+
+#play-again-btn {
+    display: none;
+    margin-bottom: 20px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 7px;
+    background-color: #0891b2;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#play-again-btn:hover {
+    background-color: #0e7490;
+}
+

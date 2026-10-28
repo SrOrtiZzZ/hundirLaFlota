@@ -55,21 +55,24 @@
                 Preparando el tablero...
             </p>
 
+            <button id="play-again-btn" style="display: none;">
+    Volver a jugar
+</button>
+
             <!-- Tablero de juego -->
             <div id="game-board">
                 <!-- JavaScript generará las 100 casillas -->
             </div>
 
+               
+
+
         </main>
 
     </div>
 
-    <!-- MODAL DE FIN DE PARTIDA -->
-    <div
-        id="game-over-modal"
-        class="modal-overlay"
-        style="display: none;"
-    >
+    <!-- Ventana DE FIN DE PARTIDA -->
+    <div id="game-over-modal" class="modal-overlay" style="display: none;">
 
         <div class="modal-content">
 
@@ -88,13 +91,12 @@
                 maxlength="30"
             >
 
-            <button id="save-score-btn">
-                Guardar puntuación
-            </button>
+            <button id="save-score-btn">Guardar puntuación</button>
 
         </div>
 
     </div>
+
 
     <!-- JavaScript -->
     <script src="app.js"></script>
