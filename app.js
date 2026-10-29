@@ -150,7 +150,7 @@ async function startGame() {
 function renderBoard() {
   gameBoard.innerHTML = "";
 
-  gameBoard.style.gridTemplateColumns = `repeat(${gameState.boardSize}, 40px)`;
+  gameBoard.style.gridTemplateColumns = `repeat(${gameState.boardSize}, minmax(0, 1fr))`;
 
   for (let row = 0; row < gameState.boardSize; row++) {
     for (let col = 0; col < gameState.boardSize; col++) {
